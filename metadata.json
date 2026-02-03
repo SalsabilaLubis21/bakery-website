@@ -1,0 +1,8 @@
+{
+  "name": "D'CIKA Patisserie",
+  "description": "A luxury artisanal patisserie website featuring an elegant menu, brand story, and locations, designed with a premium aesthetic.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

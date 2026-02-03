@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap");
+
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+.font-serif {
+  font-family: "Playfair Display", serif;
+}
+
+.font-signature {
+  font-family: "Great Vibes", cursive;
+}
+
+.gold-text {
+  color: #d4af37;
+}
+
+.gold-bg {
+  background-color: #d4af37;
+}
+
+/* Animated Gradient Border */
+@keyframes rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.menu-card {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  padding: 2px;
+}
+
+.menu-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(45deg, #d4af37, #fff, #d4af37, #fff);
+  background-size: 200% 200%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rotate 3s linear infinite;
+}
+
+.menu-card .card-content {
+  position: relative;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.menu-card:hover::before {
+  animation: rotate 1.5s linear infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.rotating-border-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  aspect-ratio: 1;
+  background: conic-gradient(
+    transparent 0deg,
+    transparent 280deg,
+    #d4af37 340deg,
+    #fff 360deg
+  );
+  transform: translate(-50%, -50%);
+  animation: spin-slow 4s linear infinite;
+  z-index: 0;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  filter: blur(8px);
+}
+
+.group:hover .rotating-border-glow {
+  opacity: 1;
+}
+
+.card-inner-content {
+  position: relative;
+  z-index: 10;
+  background-color: #0b0b0b;
+  height: 100%;
+  border-radius: calc(0.5rem - 2px);
+}
+
+/* Animations for About Us */
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes shine {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shine {
+  animation: shine 0.75s;
+}
+
+.particles-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  background: radial-gradient(circle, #fff, transparent 50%);
+  border-radius: 50%;
+  opacity: 0;
+  animation: float-up linear infinite;
+}
+
+.particle.gold {
+  background: radial-gradient(circle, #d4af37, transparent 60%);
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+    transform: translateY(80vh) scale(1);
+  }
+  80% {
+    opacity: 0.6;
+    transform: translateY(20vh) scale(0.8);
+  }
+  100% {
+    transform: translateY(-10vh) scale(0);
+    opacity: 0;
+  }
+}
+
+.shimmer-gold {
+  background: linear-gradient(
+    to right,
+    #bf953f 0%,
+    #fcf6ba 25%,
+    #b38728 50%,
+    #fbf5b7 75%,
+    #aa771c 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: shine-text 5s linear infinite;
+}

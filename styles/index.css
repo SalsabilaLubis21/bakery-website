@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+body {
+  background-color: #0b0b0b;
+  color: white;
+}
+
+.rotating-border-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 0deg,
+    transparent 60deg,
+    #d4af37 120deg,
+    transparent 180deg,
+    transparent 240deg,
+    #d4af37 300deg,
+    transparent 360deg
+  );
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  animation: rotate-angle 3s linear infinite;
+  pointer-events: none;
+}
+
+.rotating-border-glow::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  background: #0b0b0b;
+  z-index: 1;
+}
+
+@keyframes rotate-angle {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.menu-card-glow:hover .rotating-border-glow {
+  opacity: 1;
+}
+
+.menu-with-particles {
+  position: relative;
+  overflow: hidden;
+}
+
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
