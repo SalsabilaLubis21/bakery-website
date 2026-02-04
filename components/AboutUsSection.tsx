@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import LuxuryBackground from "./LuxuryBackground";
 
-// Hook for scroll animation
+
 const useOnScreen = (options: IntersectionObserverInit) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -52,28 +52,26 @@ const AboutUsSection: React.FC = () => {
       id="about-us"
       className="bg-black text-white overflow-hidden relative -mt-32 z-10"
     >
-      {/* Background Texture/Gradient for overall section */}
+      
       <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none z-10"></div>
 
-      {/* 1. Hero Section - First Impression */}
+     
       <div className="relative min-h-[85vh] flex flex-col items-center justify-between overflow-hidden">
-        {/* Background */}
+       
         <div className="absolute inset-0">
-          {/* Dimmed animation for better text readability but still visible */}
+          
           <div className="opacity-50">
             <LuxuryBackground />
           </div>
 
-          {/* Dark overlay to reduce brightness further */}
+        
           <div className="absolute inset-0 bg-black/20"></div>
 
-          {/* Subtle gold gradient overlay */}
+          
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
         </div>
 
-        {/* Spacer for top balance if needed, or just let content center */}
-
-        {/* Content */}
+       
         <div className="flex-grow flex items-center justify-center w-full z-10">
           <div className="text-center px-6 max-w-4xl mt-52">
             <FadeIn>
