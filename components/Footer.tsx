@@ -101,7 +101,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-white/5 flex justify-center items-center text-xs text-gray-600 tracking-widest font-bold text-center">
+        <div className="pt-12 border-t border-white/5 flex justify-center items-center text-xs text-gray-600 md:tracking-widest font-bold text-center">
           <p>© 2024 D'CIKA PATISSERIE. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
