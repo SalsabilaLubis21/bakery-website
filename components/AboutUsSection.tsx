@@ -100,7 +100,7 @@ const AboutUsSection: React.FC = () => {
         </div>
 
         {/* Mouse Scroll Indicator */}
-        <div className="pb-4 mt-16 md:mt-0 flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity duration-300 z-10">
+        <div className="pb-2 mt-16 md:mt-0 flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity duration-300 z-10">
           <div className="w-[30px] h-[50px] rounded-[15px] border-2 border-[#D4AF37] flex justify-center p-1 relative shadow-[0_0_10px_rgba(212,175,55,0.3)]">
             <div className="w-[4px] h-[8px] bg-[#D4AF37] rounded-full animate-scroll-wheel"></div>
           </div>
@@ -293,8 +293,10 @@ const AboutUsSection: React.FC = () => {
             ].map((item, index) => (
               <FadeIn key={index} delay={index * 0.2}>
                 <div className="bg-[#111] p-8 rounded-2xl border border-[#333] shadow-2xl relative group hover:-translate-y-2 transition-transform duration-300">
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-[#0a0a0a] text-[#D4AF37] rounded-full flex items-center justify-center font-bold text-lg border-2 border-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.4)] z-20">
-                    {item.step}
+                  <div className="absolute -top-6 left-0 w-full flex justify-center z-20">
+                    <div className="w-12 h-12 bg-[#0a0a0a] text-[#D4AF37] rounded-full flex items-center justify-center font-bold text-lg border-2 border-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+                      {item.step}
+                    </div>
                   </div>
                   <div className="mt-6 text-center">
                     <h4 className="text-xl font-bold text-white mb-2 group-hover:text-[#D4AF37] transition-colors">

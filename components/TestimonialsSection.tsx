@@ -82,8 +82,8 @@ const TestimonialsSection: React.FC = () => {
   const displayTestimonials = [...TESTIMONIALS, ...TESTIMONIALS];
 
   return (
-    <section className="py-24 bg-black border-t border-white/5 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 text-center">
+    <section className="py-24 bg-black border-t border-white/5 overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 text-center relative z-10">
         <h4 className="text-[#D4AF37] text-xs font-bold tracking-[0.2em] uppercase mb-4">
           Testimonials
         </h4>
@@ -93,7 +93,7 @@ const TestimonialsSection: React.FC = () => {
       </div>
 
       <div
-        className="relative w-full"
+        className="relative w-full overflow-visible"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onTouchStart={() => setIsPaused(true)}
@@ -102,7 +102,14 @@ const TestimonialsSection: React.FC = () => {
         <div
           ref={scrollRef}
           className="flex space-x-6 overflow-x-auto pb-8 px-6 no-scrollbar"
-          style={{ scrollBehavior: "auto", WebkitOverflowScrolling: "touch" }}
+          style={{
+            scrollBehavior: "auto",
+            WebkitOverflowScrolling: "touch",
+            maskImage:
+              "linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%)",
+          }}
         >
           {displayTestimonials.map((item, index) => (
             <div
@@ -177,8 +184,6 @@ const TestimonialsSection: React.FC = () => {
           ))}
         </div>
 
-        <div className="absolute top-0 left-0 h-full w-12 md:w-32 bg-gradient-to-r from-[#0B0B0B] to-transparent pointer-events-none"></div>
-        <div className="absolute top-0 right-0 h-full w-12 md:w-32 bg-gradient-to-l from-[#0B0B0B] to-transparent pointer-events-none"></div>
       </div>
 
       <style>{`
