@@ -57,12 +57,12 @@ const Hero: React.FC = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-5 sm:space-y-0 sm:space-x-8 w-full px-4 sm:px-0">
-          <button className="w-full sm:w-auto gold-bg text-black px-16 py-4 text-[12px] font-bold tracking-[0.25em] uppercase transition-all hover:bg-white hover:scale-105 shadow-[0_20px_60px_rgba(212,175,55,0.3)]">
+          <a href="#menu" className="w-full sm:w-auto gold-bg text-black px-16 py-4 text-[12px] font-bold tracking-[0.25em] uppercase transition-all hover:bg-white hover:scale-105 shadow-[0_20px_60px_rgba(212,175,55,0.3)] text-center block">
             EXPLORE MENU
-          </button>
-          <button className="w-full sm:w-auto border border-white/30 bg-white/5 backdrop-blur-md text-white px-16 py-4 text-[12px] font-bold tracking-[0.25em] uppercase transition-all hover:bg-white hover:text-black">
-            ORDER NOW
-          </button>
+          </a>
+          <a href="#about-us" className="w-full sm:w-auto border border-white/30 bg-white/5 backdrop-blur-md text-white px-16 py-4 text-[12px] font-bold tracking-[0.25em] uppercase transition-all hover:bg-white hover:text-black flex items-center justify-center">
+            OUR STORY
+          </a>
         </div>
       </div>
     </section>

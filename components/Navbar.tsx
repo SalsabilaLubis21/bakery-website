@@ -78,7 +78,10 @@ const Navbar: React.FC = () => {
           </nav>
 
           {/* Mobile Menu Button - Right Aligned */}
-          <div className="flex justify-end md:hidden">
+          <div className="flex justify-end items-center md:hidden gap-3">
+            <button className="bg-transparent border border-[#D4AF37] text-white px-3 py-2 text-[10px] font-bold tracking-widest uppercase transition-all hover:bg-[#D4AF37] hover:text-black">
+              Order Online
+            </button>
             <button
               className="text-white p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -112,13 +115,12 @@ const Navbar: React.FC = () => {
             </button>
           </div>
           
-          {/* Empty div for desktop layout balance if needed, but grid-cols-3 handles it implicitly by leaving 3rd col empty if not specified? 
-              Wait, in grid-cols-3, we need 3 children. 
-              Child 1: Logo
-              Child 2: Nav
-              Child 3: Empty/Placeholder (hidden on mobile, visible on desktop to balance grid) 
-          */}
-          <div className="hidden md:block"></div>
+          {/* Order Online Button - Desktop Right */}
+          <div className="hidden md:flex justify-end">
+            <button className="bg-transparent border border-[#D4AF37] text-white px-6 py-2.5 text-xs font-bold tracking-[0.2em] uppercase transition-all hover:bg-[#D4AF37] hover:text-black">
+              Order Online
+            </button>
+          </div>
         </div>
       </div>
 
@@ -133,14 +135,14 @@ const Navbar: React.FC = () => {
           onClick={() => setIsMenuOpen(false)}
         />
         
-        {/* Drawer Panel (50% Height) */}
+        {/* Drawer Panel */}
         <div 
           className={`absolute top-full left-0 right-0 bg-[#0a0a0a] border-b border-[#D4AF37]/30 shadow-[0_15px_40px_rgba(0,0,0,0.7)] overflow-hidden transition-all duration-500 ease-in-out ${
-            isMenuOpen ? "max-h-[50vh] opacity-100" : "max-h-0 opacity-0"
+            isMenuOpen ? "max-h-[60vh] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="h-[50vh] flex flex-col justify-center items-center w-full">
-            <ul className="flex flex-col items-center space-y-8">
+          <div className="h-full py-8 flex flex-col justify-center items-center w-full">
+            <ul className="flex flex-col items-center space-y-6">
               <li className={`transform transition-all duration-500 delay-100 ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}>
                 <a
                   href="#home"
@@ -167,6 +169,14 @@ const Navbar: React.FC = () => {
                 >
                   Locations
                 </a>
+              </li>
+              <li className={`transform transition-all duration-500 delay-400 ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}>
+                <button
+                  className="bg-transparent border border-[#D4AF37] text-white px-8 py-3 text-sm font-bold tracking-[0.2em] uppercase transition-all hover:bg-[#D4AF37] hover:text-black mt-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Order Online
+                </button>
               </li>
             </ul>
           </div>

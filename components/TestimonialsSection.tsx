@@ -87,9 +87,10 @@ const TestimonialsSection: React.FC = () => {
         <h4 className="text-[#D4AF37] text-xs font-bold tracking-[0.2em] uppercase mb-4">
           Testimonials
         </h4>
-        <h2 className="text-3xl md:text-5xl font-serif text-white">
+        <h2 className="text-3xl md:text-5xl font-serif text-white mb-6">
           What They Say
         </h2>
+        <div className="w-24 h-1 bg-[#D4AF37] mx-auto"></div>
       </div>
 
       <div

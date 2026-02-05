@@ -43,12 +43,5 @@ export const LOCATIONS: Location[] = [
     address: '123 Luxury Ave, Manhattan, NY',
     hours: '08:00 AM - 09:00 PM',
     phone: '+1 (212) 555-0198'
-  },
-  {
-    id: 'l2',
-    name: 'The Artisan District',
-    address: '456 Baker St, Brooklyn, NY',
-    hours: '07:00 AM - 07:00 PM',
-    phone: '+1 (718) 555-0122'
   }
 ];

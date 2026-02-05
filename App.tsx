@@ -18,6 +18,7 @@ function App() {
         <AboutUsSection />
 
         <div className="relative z-10">
+          <div id="menu" className="absolute -top-24" />
           <MenuSection />
           <TestimonialsSection />
 

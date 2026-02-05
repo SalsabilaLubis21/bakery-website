@@ -157,7 +157,6 @@ const MenuSection: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      id="menu"
       className="relative bg-black text-white overflow-hidden -mt-1"
     >
       <div className="absolute inset-0 bg-radial-gradient from-[#1a1a1a] via-[#050505] to-[#000] z-0 pointer-events-none"></div>

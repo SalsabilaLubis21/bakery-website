@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { LOCATIONS } from "../constants";
 
 const MAP_URLS: Record<string, string> = {
@@ -7,43 +7,19 @@ const MAP_URLS: Record<string, string> = {
 };
 
 const LocationsSection: React.FC = () => {
-  const [activeLocationId, setActiveLocationId] = useState(LOCATIONS[0].id);
-
-  const activeLocation =
-    LOCATIONS.find((loc) => loc.id === activeLocationId) || LOCATIONS[0];
+  const activeLocation = LOCATIONS[0];
 
   return (
     <section id="locations" className="py-24 px-6 md:px-12 bg-black">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 gap-8 md:gap-4">
-          <div className="text-center md:text-left">
-            <h4 className="text-[#D4AF37] text-xs font-bold tracking-[0.2em] uppercase mb-2 md:mb-4">
-              Find Us
-            </h4>
-            <h2 className="text-3xl md:text-5xl font-serif text-white">
-              Our Boutiques
-            </h2>
-          </div>
-
-          {/* Location Selector Tabs */}
-          <div className="flex space-x-1 border-b border-white/10 w-full md:w-auto justify-center md:justify-start">
-            {LOCATIONS.map((loc) => (
-              <button
-                key={loc.id}
-                onClick={() => setActiveLocationId(loc.id)}
-                className={`px-6 py-3 text-xs font-bold tracking-widest uppercase transition-all relative ${
-                  activeLocationId === loc.id
-                    ? "text-[#D4AF37]"
-                    : "text-gray-500 hover:text-white"
-                }`}
-              >
-                {loc.name}
-                {activeLocationId === loc.id && (
-                  <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#D4AF37]"></div>
-                )}
-              </button>
-            ))}
-          </div>
+        <div className="text-center mb-16">
+          <h4 className="text-[#D4AF37] text-xs font-bold tracking-[0.2em] uppercase mb-4">
+            Find Us
+          </h4>
+          <h2 className="text-3xl md:text-5xl font-serif text-white mb-6">
+            Our Boutique
+          </h2>
+          <div className="w-24 h-1 bg-[#D4AF37] mx-auto"></div>
         </div>
 
         {/* Spliting Layout between map and info */}
@@ -51,7 +27,7 @@ const LocationsSection: React.FC = () => {
           {/* Left: Google Maps Embed */}
           <div className="relative h-[400px] lg:h-auto min-h-[400px] bg-[#1a1a1a] w-full">
             <iframe
-              src={MAP_URLS[activeLocationId] || MAP_URLS["l1"]}
+              src={MAP_URLS[activeLocation.id] || MAP_URLS["l1"]}
               width="100%"
               height="100%"
               style={{
